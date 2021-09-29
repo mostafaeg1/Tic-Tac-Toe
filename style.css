@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #14bdac;
+    height: 9%;
+    
+}
+
+
+
+header{
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+font-size: 1.5em;
+height: 15vh;
+}
+
+#gameboard-container{
+display: flex;
+justify-content: center;
+text-align: center;
+height: 60vh;
+align-items: center;
+
+}
+
+#info{
+height: 5vh;
+width: 100%;
+display: flex;
+justify-content: center;
+align-content: center;;
+margin-bottom: 10px;
+}
+
+#screen{
+    font-size: 2em;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#gameboard{
+    display: grid;
+    height: 270px;
+    width: 270px;
+    grid-template-columns: auto auto auto; 
+    border-radius: 20px; 
+}
+
+.grid-item{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.8rem;
+    width: 90px;
+    height: 90px;
+    cursor:pointer;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+
+#a01,#a11,#a00,#a10{
+ border-right:8px solid #0da192;
+ border-bottom:8px solid #0da192;
+}
+
+#a20,#a21{
+    border-right:8px solid #0da192;
+}
+
+#a02,#a12{
+    border-bottom:8px solid #0da192;
+}
+
+#setting{
+display: flex;
+justify-content:space-evenly;
+align-items: center;
+
+}
+
+#delete-btn,#game-mode-btn{
+padding: 10px;
+width: 200px;
+cursor: pointer;
+border: none;
+border-radius: 7px;
+color: white;
+font-size: 1.3em;
+}
+
+#delete-btn{
+background-color: red;
+}
+
+#delete-btn:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#game-mode-btn:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#delete-btn:active{
+  box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+}
+
+#game-mode-btn:active{
+  box-shadow: rgba(0, 0, 0, 0.35) 5px 10px 20px;
+}
+
+#game-mode-btn{
+  background-color: hsl(197, 95%, 60%);
+}
+
+#options{
+    height: 5vh;
+    display: flex;
+    justify-content:left;
+}
+
+
+
+#Overlay{
+    position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 3s;
+  animation-name: slideIn;
+  animation-duration: 2.1s
+}
+
+#result{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size:5rem;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transition:all 1.5s ease;
+  }
+
+
+  @-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
+  
+  
+ @media screen and (max-width:780px) {
+   #result{
+    font-size: 4rem;
+   }
+ }
+
+ @media screen and (max-width:640px) {
+  #result{
+   font-size: 3rem;
+  }
+  #game-mode-btn,#delete-btn{
+    width:120px;
+    font-size: 1.3em;
+
+  }
+}
+
+@media screen and (max-width:500px) {
+  #result{
+   font-size: 2rem;
+  }
+}
+
+
+/*long screens (ipad tablets)*/
+@media screen and (min-height:650px) {
+  #gameboard{
+    height: 330px;
+    width: 330px;
+}
+
+.grid-item{
+    font-size: 3.8rem;
+    width: 110px;
+    height:110px;
+    
+}
+}
+
+@media screen and (min-height:900px) {
+  #gameboard{
+    height: 390px;
+    width: 390px;
+}
+
+.grid-item{
+    font-size: 3.8rem;
+    width: 130px;
+    height:130px;
+    
+}
+}
+
+
